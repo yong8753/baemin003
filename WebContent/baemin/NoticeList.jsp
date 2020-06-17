@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-	System.out.println("------ NoticeList.jsp --- ");
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +20,6 @@
 <!-- CDN - jquery 3.4.1 -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
 
 <style>
 * {
@@ -51,7 +45,7 @@
 				<!--  main content start here!!!----------------------------------------------------------- -->
 
 				<div style="margin-top: 15px;">
-					<h2>공지사항</h2>
+					<h2 onclick="callList()">공지사항</h2>
 				</div>
 
 				<div id="whereNoticeLoad"></div>
@@ -68,8 +62,11 @@
 
 	<script>
 		window.onload = function() {
-			$("#whereNoticeLoad").load("../notice/NoticeList.jsp");
-
+			callList();
+		}
+		
+		function callList(){
+			$("#whereNoticeLoad").load("../notice/NoticeList.do");
 		}
 
 		function modalOn() {
@@ -83,6 +80,7 @@
 			console.log(e);
 			var a1 = e.children[0].innerText;
 			console.log(a1);
+			$("#whereNoticeLoad").load("../notice/NoticeView.do?no="+a1);
 		}
 	</script>
 

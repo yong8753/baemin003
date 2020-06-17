@@ -1,7 +1,5 @@
-<%@page import="com.baemin.orderlist.OrderListDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%--  태그를 이용해서 제어문 처리하도록 하는 설정  --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html;">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <!-- CDN OFFLINE- sw_topNav.css -->
 <link rel="stylesheet" href="../sw_css/sw-1.0.0.css">
@@ -28,16 +25,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<%-- request객체에 담기 --%>
-	<%
-		String no_ = session.getAttribute("no") + "";
-		int memberNo = Integer.parseInt(no_.trim());
-
-		OrderListDAO dao = OrderListDAO.getInstance();
-		request.setAttribute("list", dao.getListByMember_No(memberNo));
-	%>
-
 	<!-- responsive template by SW ----------------------------------------------------------- -->
 	<!-- Need   W3CSS  +  FONT AS4  +  sw+topnav offline ------------------------------------- -->
 	<div class="sw-topnav-margin">&nbsp;</div>
@@ -64,6 +51,7 @@
 						<c:forEach items="${ list }" var="dto">
 
 							<div class="w3-container w3-section w3-border-bottom">
+								<input type="text" value="${dto.shop_NO }" />
 								<div class="w3-row">
 									<label style="color: gray; margin-top: 10px;">
 										${dto.orderDate }</label>
@@ -100,12 +88,22 @@
 								<label>${dto.menu_String }</label>
 
 								<div class="w3-section w3-center">
-									<input type="button" class="w3-button w3-block w3-border w3-cyan"
-										onClick="#" value="가게보기">
+									<input type="button"
+										class="w3-button w3-block w3-border w3-cyan"
+										onClick="go2shop(this)" value="가게보기">
 								</div>
 							</div>
 						</c:forEach>
 						<!-- 반복의 끝 -->
+
+						<script>
+							function go2shop(e) {
+								var a1 = e.parentNode.parentNode.children[0].value;
+								console.log(a1);
+								location.href = "../baemin/ShopPage.do?shopNo="
+										+ a1.trim();
+							}
+						</script>
 
 					</div>
 					<!-- main content end----------------------------------------------------------------------- -->

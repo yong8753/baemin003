@@ -1,6 +1,3 @@
-<%@page import="com.baemin.member.MemberDTO"%>
-<%@page import="com.baemin.member.MemberDAO"%>
-<%@page import="com.baemin.shop.ShopDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -92,7 +89,7 @@ img {
             </div> -->
 			<div class="w3-row w3-center" style="margin-top: 3%">
 				<button type="button" class="w3-button w3-white w3-center"
-					onclick="location.href = '../memberClient/AddrChangeForm.jsp';">
+					onclick="location.href = '../memberClient/AddrChangeForm.do';">
 					<!-- ------------------------------------------------------- -->
 					<span id="addr_result"> ${dto.addr }
 					</span> &nbsp;<span id="addr2_result">  ${dto.addr2 }
@@ -252,7 +249,7 @@ img {
 		function go2ShopList(e) {
 			var a1 = e.children[1].value;
 			console.log(a1);
-			location.href = "ShopList.jsp?category=" + a1;
+			location.href = "../baemin/ShopList.do?category=" + a1;
 		}
 	</script>
 

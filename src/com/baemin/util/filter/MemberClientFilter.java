@@ -31,16 +31,16 @@ public class MemberClientFilter implements Filter {
 
         } else if (Integer.parseInt(session.getAttribute("grade") + "") == 1) {
             // --- 일반회원 로그인 상태
-            // ((HttpServletResponse) response).sendRedirect("/baemin003/baemin/Main.jsp");
+            // ((HttpServletResponse) response).sendRedirect("/baemin003/baemin/Main.do");
             chain.doFilter(request, response);
 
         } else if (Integer.parseInt(session.getAttribute("grade") + "") == 2) {
             // --- 사업장 회원 로그인 상태
-            ((HttpServletResponse) response).sendRedirect("/baemin003/shop/Main.jsp");
+            ((HttpServletResponse) response).sendRedirect("/baemin003/shop/Main.do");
 
         } else if (Integer.parseInt(session.getAttribute("grade") + "") == 3) {
             // --- 관리자 로그인 상태
-            ((HttpServletResponse) response).sendRedirect("/baemin003/admin/Main.jsp");
+            ((HttpServletResponse) response).sendRedirect("/baemin003/admin/Main.do");
 
         }
     }

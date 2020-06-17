@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
-
-<%
-	request.setCharacterEncoding("UTF-8");
-	System.out.println("------ ShopList.jsp --- ");
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,19 +38,6 @@
 </head>
 
 <body>
-
-	<%
-		String category = request.getParameter("category");
-
-		if (category == null) {
-			category = "korean";
-		}
-
-		System.out.println("category=" + category + "----");
-
-		request.setAttribute("category", category);
-	%>
-
 	<!-- responsive template by SW ----------------------------------------------------------- -->
 	<!-- Need   W3CSS  +  FONT AS4  +  sw+topnav offline ------------------------------------- -->
 	<div class="sw-topnav-margin" style="margin: 30px">&nbsp;</div>
@@ -73,14 +54,14 @@
 			function listReload() {
 				var a1 = document.getElementById("category").value;
 				console.log(a1);
-				$("#shopListHere").load("ShopListContent.jsp?category=" + a1);
+				$("#shopListHere").load("./ShopListContent.do?category=" + a1);
 				window.scroll(0, 0);
 			}
 
 			function go2Shop(e) {
 				var a1 = e.children[0].children[1].children[1].value.trim();
 				console.log(a1);
-				location.href = "ShopPage.jsp?shopNo=" + a1;
+				location.href = "../baemin/ShopPage.do?shopNo=" + a1;
 			}
 
 			// get방식 파라미터로 초기   SELCET
@@ -140,12 +121,14 @@
 
 
 
-		<!-- responsive template by SW ----------------------------------------------------------- -->
-		<!-- Need   W3CSS  +  FONT AS4  +  sw+topnav offline ------------------------------------- -->
-		<div class="sw-topnav-margin">&nbsp;</div>
-		<div class="sw-topnav-margin">&nbsp;</div>
-		<%-- 사이트 공통 부분 Include - topnav --%>
-		<jsp:include page="../sw_css/memberTopNav.jsp" />
+	</div>
+
+	<!-- responsive template by SW ----------------------------------------------------------- -->
+	<!-- Need   W3CSS  +  FONT AS4  +  sw+topnav offline ------------------------------------- -->
+	<div class="sw-topnav-margin">&nbsp;</div>
+	<div class="sw-topnav-margin">&nbsp;</div>
+	<%-- 사이트 공통 부분 Include - topnav --%>
+	<jsp:include page="../sw_css/memberTopNav.jsp" />
 </body>
 
 </html>

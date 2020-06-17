@@ -402,7 +402,7 @@ public class OrderListDAO {
 			// 1+2
 			con = getConnection();
 			// 3. sql
-			String sql = " SELECT CNT.NO no, NAME, orderdate, STATUS, COMMENT, shopname, completeTime, "
+			String sql = " SELECT CNT.NO no, NAME, orderdate, STATUS, COMMENT, shopname, completeTime, shop_no,"
 					+ " menuString, order_cancel.whyCancel whyCancel " + " FROM ( "
 					+ " SELECT NO, NAME, orderDate, STATUS, COMMENT, shop_no, shopname, member_no, "
 					+ " completeTime,   Group_concat( aaa SEPARATOR ' / ') menuString  " + " FROM( "
@@ -459,6 +459,7 @@ public class OrderListDAO {
 					dto.setStatus(rs.getInt("status"));
 					dto.setComment(rs.getString("comment"));
 					dto.setShop_Name(rs.getString("shopname"));
+					dto.setShop_NO(rs.getInt("shop_No"));
 					dto.setCompleteTime(rs.getString("completeTime"));
 					dto.setMenu_String(rs.getString("menuString"));
 					dto.setWhyCancel(rs.getString("whyCancel"));

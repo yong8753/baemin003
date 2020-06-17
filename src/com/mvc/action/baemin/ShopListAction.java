@@ -12,10 +12,18 @@ public class ShopListAction implements CommandAction {
         System.out.println("- - - - ShopListAction - - - - ");
         ///////////////// 이 아래에 내용 넣으세요 /////////////////////////
 
-        //
+        String category = request.getParameter("category");
+
+        if (category == null) {
+            category = "korean";
+        }
+
+        System.out.println("category=" + category + "----");
+
+        request.setAttribute("category", category);
 
         ///////////////// 이 위에 내용 넣으세요 /////////////////////////
-        return "aaaa";
+        return "/baemin/ShopList.jsp";
     }
 
 }

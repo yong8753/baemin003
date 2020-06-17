@@ -15,7 +15,7 @@ public class NoticeListAction implements CommandAction {
         //
 
         ///////////////// 이 위에 내용 넣으세요 /////////////////////////
-        return "aaaa";
+        return "/baemin/NoticeList.jsp";
     }
 
 }

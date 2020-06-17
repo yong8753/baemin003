@@ -1,17 +1,6 @@
-<%@page import="com.baemin.orderlist.Order_MenuDTO"%>
-<%@page import="com.baemin.util.Ht2List"%>
-<%@page import="com.baemin.orderlist.cart.CartMgr"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page import="java.util.*"%>
-
-
-<%
-	request.setCharacterEncoding("UTF-8");
-	System.out.println("------ Cart.jsp --- ");
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,22 +39,6 @@
 </script>
 </head>
 <body>
-	<%
-		Object cart_shop_no_ob = session.getAttribute("cart_shop_no");
-		System.out.println("cart_shop_no_ob=" + cart_shop_no_ob);
-		String cart_shop_no_ = cart_shop_no_ob + "";
-		cart_shop_no_ = cart_shop_no_.trim();
-		System.out.println("cart_shop_no_=" + cart_shop_no_);
-		int cart_shop_no = -1;
-
-		if (cart_shop_no_ob == null) {
-			CartMgr cart = new CartMgr();
-			session.setAttribute("cart", cart);
-			session.setAttribute("cart_shop_no", -1);
-		} else {
-			cart_shop_no = Integer.parseInt(cart_shop_no_);
-		}
-	%>
 	<!-- responsive template by SW ----------------------------------------------------------- -->
 	<!-- Need   W3CSS  +  FONT AS4  +  sw+topnav offline ------------------------------------- -->
 	<div class="sw-topnav-margin">&nbsp;</div>
@@ -127,15 +100,15 @@
 			var shop_No = document.getElementById("shop_no").value;
 
 			if (shop_No.trim().length < 1) {
-				location.href = "Main.jsp";
+				location.href = "../baemin/Main.do";
 			} else {
-				location.href = "ShopPage.jsp?shopNo=" + shop_No;
+				location.href = "../baemin/ShopPage.do?shopNo=" + shop_No;
 			}
 
 		}
 
 		function loadCartContent() {
-			$("#whereCartContentLoad").load("CartContent.jsp");
+			$("#whereCartContentLoad").load("../baemin/CartContent.do");
 			setTimeout(function() {
 				var a1 = document.getElementById("cart_total").innerText;
 				document.getElementById("totalPrice").innerText = a1;
@@ -147,7 +120,7 @@
 
 	<div id="commentInputModal" class="w3-modal w3-border w3-padding">
 		<div class="w3-modal-content sw-container-500 w3-round-xlarge w3-padding">
-			<form action="OrderPro.jsp" method="post">
+			<form action="../baemin/OrderPro.do" method="post">
 
 				<div class="w3-section w3-center" style="margin-top: 15px;">
 					<h6>추가 요청사항을 입력하세요 (선택)</h6>

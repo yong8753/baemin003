@@ -8,7 +8,7 @@
 <div class="topnav w3-card-4" id="topNav">
 	<a href="${ctxpath}/shop/Main.do" class="w3-baemint active"> 배달의 인종 </a>
 	<!-- -------------------------------------------------------------------------- -->
-	<a> <strong>${sessionScope.id }</strong> </a>
+	<a> <strong>${sessionScope.name }</strong> </a>
 	<!-- -------------------------------------------------------------------------- -->
 	<a href="${ctxpath}/memberShop/MyPageShop.do">마이페이지</a>
 	<!-- -------------------------------------------------------------------------- -->

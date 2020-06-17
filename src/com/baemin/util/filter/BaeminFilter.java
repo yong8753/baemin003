@@ -31,7 +31,7 @@ public class BaeminFilter implements Filter {
 
         } else if (Integer.parseInt(session.getAttribute("grade") + "") == 1) {
             // --- 일반회원 로그인 상태
-            // ((HttpServletResponse) response).sendRedirect("/baemin/Main.jsp");
+            // ((HttpServletResponse) response).sendRedirect("/baemin/Main.do");
             chain.doFilter(request, response);
 
         } else if (Integer.parseInt(session.getAttribute("grade") + "") == 2) {

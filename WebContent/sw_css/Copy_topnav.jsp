@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-
 
 <!-- HEAD ------------------------------------------------------------------------------------ -->
 <!-- head가 맨 나중?나중에 나온 요소가 레이어 맨위로... ---------------------------------------->

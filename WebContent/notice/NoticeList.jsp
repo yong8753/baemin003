@@ -1,17 +1,6 @@
-<%@page import="com.baemin.notice.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="java.util.*"%>
-
-<%
-	request.setCharacterEncoding("utf-8");
-	System.out.println("------ Notice.jsp --- ");
-
-	NoticeDAO dao = NoticeDAO.getInstance();
-	List<NoticeDTO> list = dao.getList();
-	request.setAttribute("list", list);
-%>
 
 <table class="w3-table w3-bordered" id="myTable">
 

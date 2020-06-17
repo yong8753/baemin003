@@ -1,41 +1,8 @@
-<%@page import="java.util.*"%>
-<%@page import="com.baemin.review.*"%>
-<%@page import="com.baemin.menu.*"%>
-<%@page import="com.baemin.shop.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 태그를 이용해서 제어문 처리하도록 하는 설정 -->
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="customtag" tagdir="/WEB-INF/tags"%>
-
-
-<%
-	request.setCharacterEncoding("UTF-8");
-	System.out.println("------ ShopPage.jsp --- ");
-
-	int no = 0;
-	String no_ = request.getParameter("shopNo");
-	//response.sendRedirect("../index.html");
-	System.out.println("no_ "+no_);
-	
-	no = Integer.parseInt((no_+"").trim());
-	System.out.println("no "+no);
-	
-	
-	ShopDAO shopdao = ShopDAO.getInstance();
-	ShopDTO shopdto = shopdao.getShopInfo(no);
-	request.setAttribute("shopdto", shopdto);
-	
-	MenuDAO menudao = MenuDAO.getInstance();
-	List<MenuDTO> menu_list = menudao.getListByShopActive(no);
-	System.out.println("menu_list.size="+menu_list.size());
-	request.setAttribute("menuList",menu_list); 
-	
-	ReviewDAO reviewdao = ReviewDAO.getInstance();
-	List<ReviewDTO> review_list = reviewdao.getListByShop(no, 10);
-request.setAttribute("review_list", review_list);
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -228,7 +195,7 @@ request.setAttribute("review_list", review_list);
 							// ajax +  post >> to SERVER
 							$.ajax({
 								type : "post",
-								url : "AddCartPro.jsp",
+								url : "../baemin/AddCartPro.do",
 								//dateType : "json",
 								//contentType : "application/json; charset=utf-8",
 								data : data,
@@ -276,8 +243,7 @@ request.setAttribute("review_list", review_list);
 						</p>
 					</div>
 					<div class="w3-panel">
-						<p>
-							<%=shopdto.getShopTel()%></p>
+						<p>${shopdto.shopTel }</p>
 					</div>
 				</div>
 				<!-- tab 2 end------------------------------------------------ -->
@@ -329,7 +295,7 @@ request.setAttribute("review_list", review_list);
 							}
 						</script>
 						<div class=" w3-row" style="margin-top: 5px;">
-							<form method="post" action="ReviewWritePro.jsp">
+							<form method="post" action="../baemin/ReviewWritePro.do">
 								<div class="w3-col w3-right"
 									style="width: 10%; margin-right: 3%; margin-left: 2%; margin-top: 3%;">
 									<input type="submit" id="reviewWriteBtn"
@@ -341,8 +307,9 @@ request.setAttribute("review_list", review_list);
 									<textarea rows="3" style="width: 100%; resize: none"
 										onkeydown="whenInputReview()" name="content" id="content"></textarea>
 								</div>
-								<input type="text" id="bbb" name="rank" /> <input type="text"
-									name="shop_No" value="<%=no%>" />
+								<input type="hidden" id="bbb" name="rank" />
+								<!-- ---------------------------------------------------------- -->
+								<input type="hidden" name="shop_No" value="${shopdto.no }" />
 							</form>
 						</div>
 					</div>

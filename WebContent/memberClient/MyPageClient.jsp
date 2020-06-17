@@ -121,7 +121,7 @@
 					<div class="w3-row-padding w3-section">
 						<div class="w3-col s6">
 							<input class="w3-button w3-baemint w3-block" type="button"
-								value="주문내역" onclick="location = '../baemin/OrderList.jsp'">
+								value="주문내역" onclick="location = '../baemin/OrderList.do'">
 						</div>
 						<div class="w3-col s6">
 							<input class="w3-button w3-baemint w3-block" type="button"
