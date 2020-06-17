@@ -18,6 +18,54 @@ public class OrderListDAO {
 	DataSource ds = null;
 	Statement stmt = null;
 
+	// getTotalMoney_start-----------------------------------------------------------------------------
+	public int getTotalMoney(int shop_No, int how_MANY_HOURS) throws Exception {
+		// 출력객체
+		int result = 0;
+		System.out.println("---OrderListDAO getTotalMoney");
+
+		try {
+			// 1+2
+			con = getConnection();
+			// 3. sql
+			String sql = " SELECT order_menu.count COUNT, menu.menuPrice, orderlist.orderDate "
+					+ " FROM orderlist, order_menu, menu " + " WHERE orderlist.shop_no = ?  AND orderlist.orderDate "
+					+ " BETWEEN DATE_ADD(NOW() , INTERVAL -" + how_MANY_HOURS + " hour) AND NOW() "
+					+ " AND orderlist.status = 2 " + " AND orderlist.no = order_menu.orderlist_No "
+					+ " AND order_menu.menu_No = menu.no ";
+
+			// SELECT order_menu.count COUNT, menu.menuPrice, orderlist.orderDate
+			// FROM orderlist, order_menu, menu
+			// WHERE orderlist.shop_no = 507
+			// AND orderlist.orderDate BETWEEN DATE_ADD(NOW() , INTERVAL -24 hour) AND NOW()
+			// AND orderlist.status = 2
+			// AND orderlist.no = order_menu.orderlist_No
+			// AND order_menu.menu_No = menu.no
+
+			// 4. 실행객체
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, shop_No);
+			// 5. 실행
+			rs = pstmt.executeQuery();
+			result = pstmt.executeUpdate();
+			// 6. 표시 --- select 때만 표시
+			if (rs != null) {
+				while (rs.next()) {
+					int a = rs.getInt("count");
+					int b = rs.getInt("menuPrice");
+					result += a * b;
+					System.out.println("result=" + result);
+				}
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+			throw new Exception(" getTotalMoney() 예외  ");
+		} finally {
+			close(con, pstmt, rs);
+		} // finally end
+		return result;
+	} // getTotalMoney_end-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
 	// getMaxNoOfShop_No_start-----------------------------------------------------------------------------
 	public int getMaxNoOfShop_No(int shop_No) throws Exception {
 		// 출력객체

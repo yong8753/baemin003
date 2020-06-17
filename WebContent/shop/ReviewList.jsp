@@ -1,9 +1,3 @@
-<%@page import="com.baemin.shop.ShopDTO"%>
-<%@page import="com.baemin.shop.ShopDAO"%>
-<%@page import="com.baemin.orderlist.OrderListDAO"%>
-<%@page import="java.util.List"%>
-<%@page import="com.baemin.review.ReviewDTO"%>
-<%@page import="com.baemin.review.ReviewDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="customtag" tagdir="/WEB-INF/tags"%>
