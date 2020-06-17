@@ -21,6 +21,8 @@ System.out.println("------CartContent.jsp");
 		System.out.println("cart_shop_no_=" + cart_shop_no_);
 
 		int cart_shop_no = Integer.parseInt(cart_shop_no_);
+		
+		request.setAttribute("cart_shop_no", cart_shop_no);
 
 		CartMgr cart = (CartMgr) session.getAttribute("cart");
 
@@ -40,6 +42,8 @@ System.out.println("------CartContent.jsp");
 	int b = list.get(i).getPrice();
 	totalPrice += a*b;
 		}
+		
+		request.setAttribute("totalPrice", totalPrice);
 %>
 
 <p>&nbsp;</p>
@@ -48,8 +52,12 @@ System.out.println("------CartContent.jsp");
 <!-- 3 main content start here!!!----------------------------------------------------------- -->
 <c:if test="${list.size()<1}">
 
-장바구니가 비었구나
-
+	<div class="w3-center">
+		<i class="material-icons" style="font-size: 48px; color: red">add_shopping_cart</i>
+	</div>
+	<div class="w3-center w3-section" style="margin-bottom: 15px;">
+		<strong> 메뉴를 담아주세요</strong>
+	</div>
 </c:if>
 
 
@@ -67,9 +75,8 @@ System.out.println("------CartContent.jsp");
 			</div>
 			<div class="w3-cyan" style="display: none;">${dto.menu_No }</div>
 			<div class="w3-left w3-margin-left w3-margin-right">
-				<div class="w3-small" style="color: #8C8C8C; text-align: justify;">기본3인분
-					들어있는 세트메뉴인데 아이들한테는 매울수도 있으니까 조심해서 먹이는게 좋을겁니다 경고했는데 맵다고 항의하면 니네집변기
-					막힌다 ㅋㅋ</div>
+				<div class="w3-small" style="color: #8C8C8C; text-align: justify;">
+					${dto.menuEx}</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col s6">
@@ -91,8 +98,8 @@ System.out.println("------CartContent.jsp");
 	</c:forEach>
 	<!-- 3 main content start here!!!----------------------------------------------------------- -->
 	<!-- 반복의 끝 -->
-	<div id="cart_shop_no"><%=cart_shop_no%></div>
-	<div id="cart_total"><%=totalPrice%></div>
+	<div id="cart_shop_no" style="display: none;">${cart_shop_no }</div>
+	<div id="cart_total" style="display: none;">${totalPrice }</div>
 </c:if>
 
 

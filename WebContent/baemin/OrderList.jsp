@@ -67,16 +67,40 @@
 								<div class="w3-row">
 									<label style="color: gray; margin-top: 10px;">
 										${dto.orderDate }</label>
-									<!-- --------------------------------------------------------------------- -->
-									<label class="w3-right">${dto.whyCancel }</label><br>
-									<!-- --------------------------------------------------------------------- -->
-									<label class="w3-right" style="color: red">( 재료소진 )</label>
+
+									<c:choose>
+										<c:when test="${dto.status ==-1}">
+											<label class="w3-right">주문취소</label>
+											<br>
+											<label class="w3-right" style="color: red">(
+												${dto.whyCancel } )</label>
+										</c:when>
+										<c:when test="${dto.status ==0}">
+											<label class="w3-right">접수대기</label>
+											<br>
+											<label class="w3-right" style="color: red">( 아직 매장에서
+												접수하지 않았습니다 )</label>
+										</c:when>
+										<c:when test="${dto.status ==1}">
+											<label class="w3-right">조리중...</label>
+											<br>
+											<label class="w3-right" style="color: red">(
+												${dto.completeTime } )</label>
+										</c:when>
+										<c:when test="${dto.status ==2}">
+											<label class="w3-right">배송</label>
+											<br>
+											<label class="w3-right" style="color: red">(
+												${dto.completeTime } )</label>
+										</c:when>
+									</c:choose>
+
 								</div>
-								<h4>${dto.shop_No }</h4>
-								<label>${dto.menuString }</label>
+								<h4>${dto.shop_Name }</h4>
+								<label>${dto.menu_String }</label>
 
 								<div class="w3-section w3-center">
-									<input type="button" class="w3-button w3-block w3-border"
+									<input type="button" class="w3-button w3-block w3-border w3-cyan"
 										onClick="#" value="가게보기">
 								</div>
 							</div>

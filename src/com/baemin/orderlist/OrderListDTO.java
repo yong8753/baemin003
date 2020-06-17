@@ -29,6 +29,7 @@ public class OrderListDTO {
     /// JOIN
     private String whyCancel;
     private String tel;
+    private String shop_Name;
     /// JOIN
     private String menu_String; // 리스트 불러올때
     private List<Order_MenuDTO> menuList; // 주문 넣을때 전달 객체

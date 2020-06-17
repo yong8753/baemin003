@@ -6,7 +6,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.*"%>
- 
+
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -77,7 +77,8 @@
 		<div class="sw-container-500">
 			<!-- 3 main content start here!!!----------------------------------------------------------- -->
 			<div id="whereCartContentLoad"
-				class="w3-card-4 w3-center w3-margin w3-round-large">
+				class="w3-center w3-margin w3-round-large"
+				style="padding: 10px 0px;">
 
 				<!-- --------------------------------------------------------------- -->
 				<!-- -------------    이곳에 장바구니가 load 됩니다.    ---------------------- -->
@@ -103,6 +104,7 @@
 						onclick="back2shop()">+ 더 주문하기</button>
 					<input type="hidden" id="shop_no" value="" />
 				</div>
+
 			</c:if>
 		</div>
 	</div>
@@ -143,16 +145,23 @@
 		}
 	</script>
 
-	<div id="commentInputModal" class="w3-modal w3-border">
-		<div class="w3-modal-content">
-			<div class="w3-container">
-				<form action="OrderPro.jsp" method="post">
-					<input type="text" name="comment" id="comment" class="w3-input" />
-					<input type="submit" id="go2OrderPro" class="w3-input"
-						value="진짜주문하자" />
+	<div id="commentInputModal" class="w3-modal w3-border w3-padding">
+		<div class="w3-modal-content sw-container-500 w3-round-xlarge w3-padding">
+			<form action="OrderPro.jsp" method="post">
 
-				</form>
-			</div>
+				<div class="w3-section w3-center" style="margin-top: 15px;">
+					<h6>추가 요청사항을 입력하세요 (선택)</h6>
+				</div>
+				<div class="w3-row-padding w3-section">
+					<input type="text" name="comment" id="comment"
+						class="w3-input w3-border" />
+				</div>
+				<div class="w3-center w3-row-padding w3-section" style="margin-bottom: 15px;">
+					<input type="submit" id="go2OrderPro" class="w3-button w3-baemint"
+						value="주문 넣기" />
+				</div>
+
+			</form>
 		</div>
 	</div>
 
