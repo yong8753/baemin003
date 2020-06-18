@@ -335,7 +335,7 @@
 						<div class="w3-row w3-section">
 							<div class="w3-col" style="margin-left: 2%;">
 								<label>******</label><br>
-								<customtag:starRank rank="${review_dto.rank+0.0001}" width="105" />
+								<customtag:starRank rank="${review_dto.rank+0.00001}" width="105" />
 
 								<label style="font-size: 12px;">${ review_dto.regDate}</label>
 							</div>
