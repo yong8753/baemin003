@@ -76,7 +76,7 @@
 				<form method="post" action="${ctxpath}/memberClient/UpdateClientForm.do" name="myPageForm">
 				<div class="w3-container w3-card">
 					<div class="w3-section w3-center">
-						<h2>회원정보수정</h2>
+						<h2>내 정보 보기</h2>
 					</div>
 					<p>
 						<label><b>이름</b></label> <input type="text"

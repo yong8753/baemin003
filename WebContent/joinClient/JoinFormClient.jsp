@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
 <%@ include file="../util/ContextPath.jsp" %>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +63,7 @@
 		<div class="sw-container-400">
 			<div class="w3-container">
 				<!--  main content start here!!!----------------------------------------------------------- -->
-
+<div class="w3-center"><h2>개인 회원 가입</h2></div>
 				<!-- formformformformformformformformform -->
 				<form class="w3-container" name="inputForm" action="${ctxpath}/joinClient/JoinClientPro.do" method="post">
 					<!-- 아이디 .................. -->

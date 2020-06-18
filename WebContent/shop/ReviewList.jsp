@@ -47,7 +47,7 @@
 	<div class="w3-half w3-padding">
 		<table class="w3-table-all">
 			<tr id="reviewHead" class="w3-baemint">
-				<td>회원번호</td>
+
 				<td>별점</td>
 				<td>등록일</td>
 				<td>내용</td>
@@ -56,7 +56,6 @@
 		<table id="reviewCell" class="w3-table">
 			<c:forEach var="dto" items="${reviewList}">
 				<tr style="border: 1px solid black;">
-					<td style="width: 15%">${dto.member_no}</td>
 					<td style="width: 25%">
 						<!-- 별점 이미지 --> <span width="100px"> <customtag:starRank
 								rank="${dto.rank+0.001}" width="100" />
@@ -64,7 +63,7 @@
 					</td>
 					<!-- 별점 이미지 -->
 					<td style="width: 30%">${dto.regDate}</td>
-					<td style="width: 30%">${dto.content}</td>
+					<td style="width: 45%">${dto.content}</td>
 				</tr>
 			</c:forEach>
 		</table>

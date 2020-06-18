@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ include file="../util/ContextPath.jsp" %>
+<%@ include file="../util/ContextPath.jsp"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,6 @@
 	margin: 0px;
 	padding: 0px;
 }
-
-
 </style>
 <script>
 	//DAUM 주소 openAPI
@@ -66,10 +64,12 @@
 		<div class="sw-container-400">
 			<div class="w3-container">
 				<!--  main content start here!!!----------------------------------------------------------- -->
-
+				<div class="w3-center">
+					<h2>사업자 가입</h2>
+				</div>
 				<!-- formformformformformformformformform -->
-				<form class="w3-container" name="inputForm" action="${ctxpath}/joinShop/JoinShopPro.do"
-					method="post">
+				<form class="w3-container" name="inputForm"
+					action="${ctxpath}/joinShop/JoinShopPro.do" method="post">
 					<!-- 아이디 .................. -->
 					<div class="w3-row w3-section">
 						<div class="w3-col w3-center w3-right" style="width: 70px;">
@@ -104,16 +104,63 @@
 
 					<!-- 카데고리.................. -->
 					<div class="w3-row w3-section">
-						<input type="checkbox" class="w3-input" name="shopCategory"
-							value="한식">한식 <input type="checkbox" class="w3-input"
-							name="shopCategory" value="양식">양식 <input type="checkbox"
-							class="w3-input" name="shopCategory" value="중식">중식 <input
-							type="checkbox" class="w3-input" name="shopCategory" value="일식">일식
-						<input type="checkbox" class="w3-input" name="shopCategory"
-							value="피자">피자 <input type="checkbox" class="w3-input"
-							name="shopCategory" value="치킨">치킨 <input type="checkbox"
-							class="w3-input" name="shopCategory" value="햄버거">햄버거 <input
-							type="checkbox" class="w3-input" name="shopCategory" value="카페">카페
+
+
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="한식">
+						</div>
+						<div class="w3-col s3">한식</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="양식">
+						</div>
+
+						<div class="w3-col s3">양식</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="중식">
+						</div>
+
+						<div class="w3-col s3">중식</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="일식">
+						</div>
+
+						<div class="w3-col s3">일식</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="피자">
+						</div>
+
+						<div class="w3-col s3">피자</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="치킨">
+						</div>
+
+						<div class="w3-col s3">치킨</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="햄버거">
+						</div>
+
+						<div class="w3-col s3">햄버거</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
+						<div class="w3-col s3">
+							<input type="checkbox" class="w3-input" name="shopCategory"
+								value="카페">
+						</div>
+
+						<div class="w3-col s3">카페</div>
+						<!-- -------------------------------------------------------------------------------------------- -->
 					</div>
 
 					<!-- 가게 소개 .................. -->

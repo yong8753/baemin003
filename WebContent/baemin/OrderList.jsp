@@ -51,7 +51,7 @@
 						<c:forEach items="${ list }" var="dto">
 
 							<div class="w3-container w3-section w3-border-bottom">
-								<input type="text" value="${dto.shop_NO }" />
+								<input type="hidden" value="${dto.shop_NO }" />
 								<div class="w3-row">
 									<label style="color: gray; margin-top: 10px;">
 										${dto.orderDate }</label>
