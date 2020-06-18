@@ -110,7 +110,7 @@
 	function aaaa(ddd) {
 		$.ajax({
 			type : "post",
-			url : "UpdateCartPro.jsp",
+			url : "../baemin/UpdateCartPro.do",
 			//dateType : "json",
 			//contentType : "application/json; charset=utf-8",
 			data : ddd,

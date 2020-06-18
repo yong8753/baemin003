@@ -58,7 +58,7 @@
 				<!--사용자 마이 페이지-->
 				<div class="w3-container w3-card">
 
-					<form method="post" action="ChangeAddrPro.jsp">
+					<form method="post" action="../memberClient/ChangeAddrPro.do">
 						<table class="w3-table">
 							<tr>
 								<td colspan="2"><h4>새로운 주소를 검색하세요</h4></td>
@@ -77,11 +77,17 @@
 								</td>
 							</tr>
 							<tr>
+								<td colspan="2"><strong>주소</strong></td>
+							</tr>
+							<tr>
 								<td colspan="2">
 									<!-- ---------------------------------------------------------------------------------- -->
 									<input type="text" id="addr" name="addr" class="w3-input"
 									readonly /> <!-- ---------------------------------------------------- -->
 								</td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>상세 주소 (직접 입력)</strong></td>
 							</tr>
 							<tr>
 								<td colspan="2">
@@ -93,8 +99,8 @@
 							<tr>
 								<td colspan="2">
 									<!-- ---------------------------------------------------------------------------------- -->
-									<input type="text" id="memberX" name="memberX" class="w3-input" />
-									<input type="text" id="memberY" name="memberY" class="w3-input" />
+									<input type="hidden" id="memberX" name="memberX" class="w3-input" />
+									<input type="hidden" id="memberY" name="memberY" class="w3-input" />
 									<!-- ---------------------------------------------------- -->
 								</td>
 							</tr>

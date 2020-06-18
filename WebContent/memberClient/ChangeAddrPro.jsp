@@ -1,48 +1,18 @@
-<%@page import="com.baemin.member.MemberDTO"%>
-<%@page import="com.baemin.member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
+<div id="aa">${result }</div>
 
-<%
-	//자바 구문
-	request.setCharacterEncoding("UTF-8");
-	System.out.println("------ChangeAddrPro.jsp");
-%>
+<script>
+	window.onload = function() {
 
-<%
-	int no = Integer.parseInt((session.getAttribute("no") + "").trim());
-	String addr = request.getParameter("addr");
-	String addr2 = request.getParameter("addr2");
-	Double memberX = Double.parseDouble(request.getParameter("memberX")
-			.trim());
-	Double memberY = Double.parseDouble(request.getParameter("memberY")
-			.trim());
+		var result = document.getElementById("aa").innerText.trim();
 
-	MemberDAO dao = MemberDAO.getInstance();
+		if (result == 1) {
+			alert('주소가 변경되었습니다.');
+		} else {
+			alert('주소변경이 실패하였습니다.');
+		}
+		location.href = "../baemin/Main.do";
 
-	MemberDTO dto = new MemberDTO();
-
-	dto.setAddr(addr);
-	dto.setAddr2(addr2);
-	dto.setMemberX(memberX);
-	dto.setMemberY(memberY);
-	dto.setNo(no);
-
-	System.out.println();
-	System.out.println();
-	System.out.println(dto.toString());
-	System.out.println();
-	System.out.println();
-
-	int result = dao.changeAddr(dto);
-
-	if (result == 1) {
-		session.setAttribute("memberX", memberX);
-		session.setAttribute("memberY", memberY);
 	}
-
-	System.out.println("result" + result);
-
-	response.sendRedirect("../baemin/Main.jsp");
-%>
+</script>
