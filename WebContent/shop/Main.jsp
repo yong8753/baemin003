@@ -605,15 +605,13 @@
 				</div>
 				<div class="w3-row-padding w3-section">
 					<div class="w3-half">
-						<button
-							class="w3-button w3-white w3-section CancelWhyBtn"
+						<button class="w3-button w3-white w3-section CancelWhyBtn"
 							onClick="CancelWhy(this)" value="배달불가지역">
 							<b class="w3-xlarge">배달불가지역</b>
 						</button>
 					</div>
 					<div class="w3-half">
-						<button
-							class="w3-button w3-white w3-section CancelWhyBtn"
+						<button class="w3-button w3-white w3-section CancelWhyBtn"
 							onClick="CancelWhy(this)" value="고객요청">
 							<b class="w3-xlarge">고객요청</b>
 						</button>
@@ -623,7 +621,7 @@
 
 				<div class="w3-row w3-section">
 					<button
-						class="w3-panel w3-block w3-dark-grey w3-xlarge w3-wide CancelOkBtn "
+						class="w3-panel w3-block w3-red w3-xlarge w3-wide CancelOkBtn "
 						onClick="CancelOk(this)">주문취소</button>
 				</div>
 			</div>
