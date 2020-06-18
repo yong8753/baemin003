@@ -17,13 +17,12 @@ public class NoticeListAction implements CommandAction {
         System.out.println("- - - - NoticeListAction - - - - ");
         ///////////////// 이 아래에 내용 넣으세요 /////////////////////////
 
-        
         request.setCharacterEncoding("utf-8");
         System.out.println("------ Notice.jsp --- ");
 
-        NoticeDAO dao=NoticeDAO.getInstance();
-        List<NoticeDTO> list = dao.getList();
-        request.setAttribute("list", list);       
+        NoticeDAO dao = NoticeDAO.getInstance();
+        List<NoticeDTO> list = dao.getListAdmin();
+        request.setAttribute("list", list);
 
         ///////////////// 이 위에 내용 넣으세요 /////////////////////////
         return "/admin/NoticeList.jsp";

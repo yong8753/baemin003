@@ -56,6 +56,41 @@ public class NoticeDAO {
 		return list;
 	} // getList_end-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
 
+	// getListAdmin_start-----------------------------------------------------------------------------
+	public List<NoticeDTO> getListAdmin() throws Exception {
+		// 출력객체
+		List<NoticeDTO> list = new ArrayList<>();
+		System.out.println("---NoticeDAO getListAdmin");
+		try {
+			// 1+2
+			con = getConnection();
+			// 3. sql
+			String sql = "select * from notice ORDER BY startDate DESC";
+			// 4. 실행객체
+			pstmt = con.prepareStatement(sql);
+			// 5. 실행
+			rs = pstmt.executeQuery();
+			// 6. 표시 --- select 때만 표시
+			if (rs != null) {
+				while (rs.next()) {
+					NoticeDTO dto = new NoticeDTO();
+					dto.setNo(rs.getInt("no"));
+					dto.setTitle(rs.getString("title"));
+					dto.setContent(rs.getString("content"));
+					dto.setStartDate(rs.getDate("startdate") + "");
+					dto.setEndDate(rs.getDate("enddate") + "");
+					list.add(dto);
+				}
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+			throw new Exception(" getListAdmin() 예외  ");
+		} finally {
+			close(con, pstmt, rs);
+		} // finally end
+		return list;
+	} // getListAdmin_end-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
 	// writeNotice_start-----------------------------------------------------------------------------
 	public int writeNotice(NoticeDTO dto) throws Exception {
 		// 출력객체
