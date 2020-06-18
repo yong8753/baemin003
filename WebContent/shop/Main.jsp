@@ -510,7 +510,7 @@
 				<!-- 배달 도착시간입력 -->
 				<div class="w3-row w3-section">
 					<button
-						class="w3-panel w3-cyan w3-text-white w3-xlarge w3-col CookOkBtn"
+						class="w3-panel w3-block w3-baemint w3-text-white w3-xlarge w3-wide CookOkBtn"
 						onClick="CookOk(this)">조리시작</button>
 				</div>
 			</div>
@@ -569,50 +569,66 @@
 
 	<!--주문 취소 Modal시작 -->
 	<div class="w3-modal" id="jumunCancel">
-		<div class="w3-modal-content" style="width: 450px; height: 600px;">
-			<!-- 위에 패널 -->
-			<div class="w3-panel w3-black w3-display-container">
-				<span
-					onclick="document.getElementById('jumunCancel').style.display='none'"
-					class="w3-button w3-black w3-large w3-display-topright"><font>X</font></span>
-				<p class="w3-wide w3-xlarge" style="height: 41px;">주문거부사유</p>
+		<div class="w3-modal-content" style="width: 450px;">
+
+			<div class="w3-panel w3-black" style="height: 41.3px;">
+				<div class="w3-left w3-large" style="padding-top: 8px;">주문거부사유</div>
+
+				<div class="w3-right">
+					<span
+						onclick="document.getElementById('jumunCancel').style.display='none'"
+						class="w3-button w3-black w3-large w3-display-topright">X</span>
+				</div>
 			</div>
-			<!-- 위에 패널 -->
-			<!-- 밑에 버튼칸 -->
-			<div class="w3-container">
+
+			<div class="w3-container w3-section">
 				<div>
 					<b class="w3-xxlarge">취소번호:</b><span id="cancelNo"
 						class="w3-xxlarge"></span><br> <input id="shop" type="hidden" /><b
 						class="w3-xlarge">취소사유:</b><span id="CancelWhy" class="w3-xlarge"></span>
 				</div>
-				<div class="w3-row w3-margin-top">
-					<button class="w3-button w3-col w3-half w3-white CancelWhyBtn"
-						onClick="CancelWhy(this)" value="영업종료">
-						<b class="w3-xlarge">영업종료</b>
-					</button>
-					<button class="w3-button w3-col w3-half w3-white CancelWhyBtn"
-						onClick="CancelWhy(this)" value="재료 소진">
-						<b class="w3-xlarge">재료 소진</b>
-					</button>
+
+				<!-- - -->
+				<div class="w3-row-padding w3-section">
+					<div class="w3-half">
+						<button class="w3-button w3-col w3-half w3-white CancelWhyBtn"
+							onClick="CancelWhy(this)" value="영업종료">
+							<b class="w3-xlarge">영업종료</b>
+						</button>
+					</div>
+					<div class="w3-half">
+						<button class="w3-button w3-col w3-half w3-white CancelWhyBtn"
+							onClick="CancelWhy(this)" value="재료 소진">
+							<b class="w3-xlarge">재료 소진</b>
+						</button>
+					</div>
 				</div>
-				<div class="w3-row w3-margin-top">
-					<button
-						class="w3-button w3-col w3-half w3-white w3-section CancelWhyBtn"
-						onClick="CancelWhy(this)" value="배달불가지역">
-						<b class="w3-xlarge">배달불가지역</b>
-					</button>
-					<button
-						class="w3-button w3-col w3-half w3-white w3-section CancelWhyBtn"
-						onClick="CancelWhy(this)" value="고객요청">
-						<b class="w3-xlarge">고객요청</b>
-					</button>
+				<div class="w3-row-padding w3-section">
+					<div class="w3-half">
+						<button
+							class="w3-button w3-col w3-half w3-white w3-section CancelWhyBtn"
+							onClick="CancelWhy(this)" value="배달불가지역">
+							<b class="w3-xlarge">배달불가지역</b>
+						</button>
+					</div>
+					<div class="w3-half">
+						<button
+							class="w3-button w3-col w3-half w3-white w3-section CancelWhyBtn"
+							onClick="CancelWhy(this)" value="고객요청">
+							<b class="w3-xlarge">고객요청</b>
+						</button>
+					</div>
 				</div>
-				<div class="w3-row">
+				<!-- - -->
+
+				<div class="w3-row w3-section">
 					<button
-						class="w3-panel w3-dark-grey w3-col w3-xlarge w3-wide CancelOkBtn "
+						class="w3-panel w3-block w3-dark-grey w3-xlarge w3-wide CancelOkBtn "
 						onClick="CancelOk(this)">주문취소</button>
 				</div>
 			</div>
+
+
 			<!-- 밑에 버튼칸 -->
 			<!-- w3-container 끝-->
 		</div>

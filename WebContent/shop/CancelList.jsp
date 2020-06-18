@@ -21,7 +21,7 @@
 			<!-- 오른쪽-->
 			<div class="w3-col w3-container w3-right"
 				style="width: 100px; padding: 0px;">
-				<div class="count4" style="display: none;">${dto.status}</div>
+				<div class="count4 w3-text-red w3-large">${dto.whyCancel }</div>
 			</div>
 			<!-- 오른쪽-->
 			
