@@ -1,10 +1,7 @@
-<%@page import="com.baemin.orderlist.OrderListDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="ctxpath" value="<%=request.getContextPath()%>"/>
+<c:set var="ctxpath" value="<%=request.getContextPath()%>" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,15 +124,15 @@
 	var max_no = 0;
 	window.onload = function() {
 		refresh();
-	
+
 	}
 
 	function refresh() {
 		$("#tab1").load("${ctxpath}/shop/NewOrderList.do");
 		$("#SM").load("${ctxpath}/shop/ShopManage.do");
-		setTimeout(tab2Refresh,1000);
-		setTimeout(tab3Refresh,1300);
-		setTimeout(tab4Refresh,1800);
+		setTimeout(tab2Refresh, 1000);
+		setTimeout(tab3Refresh, 1300);
+		setTimeout(tab4Refresh, 1800);
 		setTimeout(countcount, 2000);
 	}
 
@@ -216,6 +213,10 @@
 		setTimeout(load, 1000);
 		setTimeout(load, 2000);
 	});
+
+	function load() {
+		$("#tab1").load("${ctxpath}/shop/NewOrderList.do");
+	}
 
 	var audio = new Audio();
 	var audio_start = 0;
@@ -305,11 +306,11 @@
 
 				<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
-				<div id="tabtab1" class="w3-row tabcontent2" >
+				<div id="tabtab1" class="w3-row tabcontent2">
 					<div class="w3-col" style="width: 100px;">
 						<button class="w3-button w3-block w3-border tablinks"
-							onclick="openTab(event, 'tab1')" id="jumoontab">
-							접수대기<br /> <strong id="NewOrderCount"></strong>
+							onclick="openTab(event, 'tab1');load()" id="jumoontab">
+							주문<br /> <strong id="NewOrderCount"></strong>
 						</button>
 						<button class="w3-button w3-block w3-border tablinks"
 							onclick="openTab(event, 'tab2');tab2Refresh();" id="tab2Btn">
@@ -371,68 +372,67 @@
 				<div id="SM">
 					<%-- <jsp:include page="ShopManage.jsp" /> --%>
 				</div>
-				</div>
-				<!-- 매장관리탭 끝 -->
-				<!-- 리뷰탭 -->
-				<div id="tabtab3" class="tabcontent2">
-					<div id="reviewList"></div>
-				</div>
-				<div id="tabtab4" class="w3-border tabcontent2">
-					<div id="noticeList">
-					<%-- 	<jsp:include page="NoticeList.jsp" /> --%>
-					</div>
-				</div>
-
-
-				<!-- 리뷰탭 끝 -->
-
-				<script>
-					function openTab(evt, tabName) {
-						var i, tabcontent, tablinks;
-						tabcontent = document
-								.getElementsByClassName("tabcontent");
-						for (i = 0; i < tabcontent.length; i++) {
-							tabcontent[i].style.display = "none";
-						}
-						tablinks = document.getElementsByClassName("tablinks");
-						for (i = 0; i < tablinks.length; i++) {
-							tablinks[i].className = tablinks[i].className
-									.replace(" w3-white", "");
-						}
-						document.getElementById(tabName).style.display = "block";
-						evt.currentTarget.className += " w3-white";
-					}
-
-					function openTab2(evt, tab2Name) {
-						// Declare all variables
-						var i, tabcontent2, tablink2;
-
-						// Get all elements with class="tabcontent" and hide them
-						tabcontent2 = document
-								.getElementsByClassName("tabcontent2");
-						for (i = 0; i < tabcontent2.length; i++) {
-							tabcontent2[i].style.display = "none";
-						}
-
-						// Get all elements with class="tablink2" and remove the class "active"
-						tablink2 = document.getElementsByClassName("tablink2");
-						for (i = 0; i < tablink2.length; i++) {
-							tablink2[i].className = tablink2[i].className
-									.replace(" w3-baemint", "");
-						}
-
-						// Show the current tab, and add an "active" class to the button that opened the tab
-						document.getElementById(tab2Name).style.display = "block";
-						evt.currentTarget.className += "";
-					}
-
-					// Get the element with id="defaultOpen" and click on it
-					document.getElementById("defaultOpen").click();
-					document.getElementById("jumoontab").click();
-				</script>
-				<!-- main content end----------------------------------------------------------------------- -->
 			</div>
+			<!-- 매장관리탭 끝 -->
+			<!-- 리뷰탭 -->
+			<div id="tabtab3" class="tabcontent2">
+				<div id="reviewList"></div>
+			</div>
+			<div id="tabtab4" class="tabcontent2">
+				<div id="noticeList">
+					<%-- 	<jsp:include page="NoticeList.jsp" /> --%>
+				</div>
+			</div>
+
+
+			<!-- 리뷰탭 끝 -->
+
+			<script>
+				function openTab(evt, tabName) {
+					var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(
+								" w3-white", "");
+					}
+					document.getElementById(tabName).style.display = "block";
+					evt.currentTarget.className += " w3-white";
+				}
+
+				function openTab2(evt, tab2Name) {
+					// Declare all variables
+					var i, tabcontent2, tablink2;
+
+					// Get all elements with class="tabcontent" and hide them
+					tabcontent2 = document
+							.getElementsByClassName("tabcontent2");
+					for (i = 0; i < tabcontent2.length; i++) {
+						tabcontent2[i].style.display = "none";
+					}
+
+					// Get all elements with class="tablink2" and remove the class "active"
+					tablink2 = document.getElementsByClassName("tablink2");
+					for (i = 0; i < tablink2.length; i++) {
+						tablink2[i].className = tablink2[i].className.replace(
+								" w3-baemint", "");
+					}
+
+					// Show the current tab, and add an "active" class to the button that opened the tab
+					document.getElementById(tab2Name).style.display = "block";
+					evt.currentTarget.className += "";
+				}
+
+				// Get the element with id="defaultOpen" and click on it
+				document.getElementById("defaultOpen").click();
+				document.getElementById("jumoontab").click();
+			</script>
+			<!-- main content end----------------------------------------------------------------------- -->
 		</div>
+	</div>
 	<!-- main content end----------------------------------------------------------------------- -->
 	<script>
 		window.onresize = responsiveMenuClose;
@@ -458,14 +458,19 @@
 
 	<!-- 배달시작 Modal시작 -->
 	<div class="w3-modal" id="jumunReady">
-		<div class="w3-modal-content" style="width: 450px; height: 600px;">
-			<div class="w3-panel w3-black w3-display-container">
-				<span
-					onclick="document.getElementById('jumunReady').style.display='none'"
-					class="w3-button w3-black w3-large w3-display-topright"><font>X</font></span>
-				<p class="w3-wide w3-xlarge" style="height: 41px;">접수대기</p>
+		<div class="w3-modal-content" style="width: 450px;">
+
+			<div class="w3-panel w3-black" style="height: 41.3px;">
+				<div class="w3-left w3-large" style="padding-top: 8px;">접수대기</div>
+
+				<div class="w3-right">
+					<span
+						onclick="document.getElementById('jumunReady').style.display='none'"
+						class="w3-button w3-black w3-large w3-display-topright"> <strong>X</strong></span>
+				</div>
 			</div>
-			<div class="w3-container w3-section" style="height: 560px;">
+
+			<div class="w3-container w3-section">
 				<div>
 					<b class="w3-xxlarge">주문번호:</b><span id="jumunNo"
 						class="w3-xxlarge"></span><br> <input id="shop" type="hidden" /><b
@@ -474,33 +479,36 @@
 					<!-- 주문 접수시간 -->
 				</div>
 				<!-- 배달 도착시간입력 -->
-				<div class="w3-row w3-margin-top">
-					<button
-						class="w3-button  w3-light-grey w3-text-grey w3-col w3-half w3-section timeBtn"
-						onClick="time(this)" value="15">
-						<b class="w3-xxxlarge">15분</b>
-					</button>
-					<button
-						class="w3-button  w3-light-grey w3-text-grey w3-col w3-half w3-section timeBtn"
-						onClick="time(this)" value="30">
-						<b class="w3-xxxlarge">30분</b>
-					</button>
+				<div class="w3-row-padding w3-section">
+					<div class="w3-half">
+						<button class="w3-button w3-light-grey w3-text-grey timeBtn"
+							onClick="time(this)" value="30">
+							<b class="w3-xxxlarge">30분</b>
+						</button>
+					</div>
+					<div class="w3-half">
+						<button class="w3-button w3-light-grey w3-text-grey timeBtn"
+							onClick="time(this)" value="45">
+							<b class="w3-xxxlarge">45분</b>
+						</button>
+					</div>
 				</div>
-				<div class="w3-row">
-					<button
-						class="w3-button  w3-light-grey w3-text-grey w3-col w3-half w3-section timeBtn"
-						onClick="time(this)" value="45">
-						<b class="w3-xxxlarge">45분</b>
-					</button>
-					<button
-						class="w3-button w3-light-grey w3-text-grey w3-col w3-half w3-section timeBtn"
-						onClick="time(this)" value="60">
-						<b class="w3-xxxlarge">60분</b>
-					</button>
-					<br>
+				<div class="w3-row-padding w3-section">
+					<div class="w3-half">
+						<button class="w3-button w3-light-grey w3-text-grey timeBtn"
+							onClick="time(this)" value="60">
+							<b class="w3-xxxlarge">60분</b>
+						</button>
+					</div>
+					<div class="w3-half">
+						<button class="w3-button w3-light-grey w3-text-grey timeBtn"
+							onClick="time(this)" value="90">
+							<b class="w3-xxxlarge">90분</b>
+						</button>
+					</div>
 				</div>
 				<!-- 배달 도착시간입력 -->
-				<div class="w3-row">
+				<div class="w3-row w3-section">
 					<button
 						class="w3-panel w3-cyan w3-text-white w3-xlarge w3-col CookOkBtn"
 						onClick="CookOk(this)">조리시작</button>
@@ -546,12 +554,11 @@
 						},
 						success : function(result) {
 							console.log("조리시작한다");
-							
-						
-							
-								document.getElementById("jumunReady").style.display = "none";
-							
-						},error : function(xhr, status, error) {
+
+							document.getElementById("jumunReady").style.display = "none";
+
+						},
+						error : function(xhr, status, error) {
 							console.log(" 실패");
 						}//error의 끝
 					});//ajax
@@ -671,11 +678,13 @@
 				}//success
 			});//ajax
 			refresh(); // 새로고침
+			setTimeout(load, 1000);
 		}//CookBtn
 	</script>
 
 	<!-- 두번째 메뉴관리 -->
-	<div class="modal fade check_viewmenu" id="check_viewmenu" role="dialog">
+	<div class="modal fade check_viewmenu" id="check_viewmenu"
+		role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content 시작-->
@@ -688,9 +697,9 @@
 					<div class="form-group">
 						<!-- 글번호입력 -->
 						<label for="writer">주문 메뉴 표시 유무</label><br> <input
-							type="hidden" id="no5" name="no5" value=""> 
-							<input type="hidden" id="status5" name="status5" value=""> 
-							<span id="status_check">123</span>
+							type="hidden" id="no5" name="no5" value=""> <input
+							type="hidden" id="status5" name="status5" value=""> <span
+							id="status_check">123</span>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -802,7 +811,8 @@
 									});//ajax의 끝*/
 						});
 
-		$("#check_viewmenu_btn").click(
+		$("#check_viewmenu_btn")
+				.click(
 						function() {
 							var menu_no = $(":input:hidden[name=no5]").val();
 							var menu_status = $(":input:hidden[name=status5]")
@@ -813,7 +823,8 @@
 								menuno : menu_no,
 								menustatus : menu_status
 							}
-							$.ajax({
+							$
+									.ajax({
 										type : "post",
 										url : "${ctxpath}/shop/MenuStatusPro.do",
 										//data : JSON.stringify(reply),

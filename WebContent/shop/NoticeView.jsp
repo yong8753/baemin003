@@ -1,11 +1,7 @@
-<%@page import="com.baemin.notice.NoticeDTO"%>
-<%@page import="com.baemin.notice.NoticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
- 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="ctxpath" value="<%=request.getContextPath()%>"/>
+<c:set var="ctxpath" value="<%=request.getContextPath()%>" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,64 +34,53 @@
 <body>
 
 
-	<!-- responsive template by SW ----------------------------------------------------------- -->
-	<!-- Need   W3CSS  +  FONT AS4  +  sw+topnav offline ------------------------------------- -->
-	<div class="sw-topnav-margin">&nbsp;</div>
 
-	<!-- CONTENT ------------------------------------------------------------------------------------ -->
-	<div class="sw-center">
-		<!-- 가로복 제한 400~1200 ---------------------------------------------------------------------------------->
-		<!-- 400~1200 사이로 조절 가능 ---------------------------------------------------------------------------------->
-		<div class="sw-container-900">
-			<div class="w3-container">
-				<!--  main content start here!!!----------------------------------------------------------- -->
-  
-<div class="w3-card-4 w3-light-gray">
-<div class="main w3-padding">
+	<div class="sw-center w3-section">
+		<div class="sw-container-500">
+			<div class="w3-card">
+				<div class="main w3-padding">
+					<p>
+						<label class="w3-text"><b>글번호</b></label> <input
+							class="w3-input w3-border" name="no" id="no" type="text"
+							value="${dto.no}" readonly>
+					</p>
 
- <p>      
-    <label class="w3-text-blue"><b>글번호</b></label>
-    <input class="w3-input w3-border" name="no" id="no" type="text" value="${dto.no}" readonly>
-  </p>
-  
-  <p>      
-    <label class="w3-text-blue"><b>글제목</b></label>
-    <input class="w3-input w3-border" name="title" name="title" type="text" value="${dto.title}" readonly>
-  </p>
-  
-  <p>      
-    <label class="w3-text-blue"><b>글내용</b></label>
-    <textarea class="w3-input w3-border" rows="5" cols="50" name="content" id="content" style="resize:none;" readonly>${dto.content}</textarea>
-  </p>
-  
-   <p>      
-    <label class="w3-text-blue"><b>작성일</b></label>
-    <input class="w3-input w3-border" name="startdate" name="startdate" type="text" value="${dto.startDate}" readonly>
-  </p>
-  
-   <p>      
-    <label class="w3-text-blue"><b>종료일</b></label>
-    <input class="w3-input w3-border" name="enddate" name="enddate" type="text" value="${dto.endDate}" readonly>
-  </p>  
-  &nbsp;
-    
-  <p align="center">          
-    <button class="w3-button w3-blue" onclick="noticeload2()">글목록</button>   
-  </p>
-  
-</div>
-</div>
+					<p>
+						<label class="w3-text"><b>글제목</b></label> <input
+							class="w3-input w3-border" name="title" name="title" type="text"
+							value="${dto.title}" readonly>
+					</p>
 
+					<p>
+						<label class="w3-text"><b>글내용</b></label>
+						<textarea class="w3-input w3-border" rows="5" cols="50"
+							name="content" id="content" style="resize: none;" readonly>${dto.content}</textarea>
+					</p>
 
-				<!-- main content end----------------------------------------------------------------------- -->
+					<p>
+						<label class="w3-text"><b>작성일</b></label> <input
+							class="w3-input w3-border" name="startdate" name="startdate"
+							type="text" value="${dto.startDate}" readonly>
+					</p>
+
+					<p>
+						<label class="w3-text"><b>종료일</b></label> <input
+							class="w3-input w3-border" name="enddate" name="enddate"
+							type="text" value="${dto.endDate}" readonly>
+					</p>
+					&nbsp;
+
+					<p align="center">
+						<button class="w3-button w3-baemint" onclick="noticeload2()">글목록</button>
+					</p>
+
+				</div>
 			</div>
 		</div>
 	</div>
-	<!-- main content end----------------------------------------------------------------------- -->
 
-	<!-- 모든페이지 공통 -->
-	<!-- modal창을 제외한 모든  컴포턴트보다 하단에 위치하여야 한다. -->
-	
+
+
 
 </body>
 </html>
