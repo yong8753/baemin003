@@ -41,7 +41,7 @@ window.onload = function(){
 		var pw = $("#password").val();
 		var pw2 = $("#password2").val();
 		
-		if(!pw || !pw2 || pw.length<4 || pw.length>12 || pw2.length<4 || pw2.length>12){
+		if(pw != pw2 || pw.length<4 || pw.length>12 || pw2.length<4 || pw2.length>12){
 			$(".pwtx").text("비밀번호가 틀립니다.");
 			document.getElementById("btn").disabled=true;
 		}else{
