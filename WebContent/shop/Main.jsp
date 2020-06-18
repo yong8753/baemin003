@@ -591,13 +591,13 @@
 				<!-- - -->
 				<div class="w3-row-padding w3-section">
 					<div class="w3-half">
-						<button class="w3-button w3-col w3-half w3-white CancelWhyBtn"
+						<button class="w3-button w3-white CancelWhyBtn"
 							onClick="CancelWhy(this)" value="영업종료">
 							<b class="w3-xlarge">영업종료</b>
 						</button>
 					</div>
 					<div class="w3-half">
-						<button class="w3-button w3-col w3-half w3-white CancelWhyBtn"
+						<button class="w3-button w3-white CancelWhyBtn"
 							onClick="CancelWhy(this)" value="재료 소진">
 							<b class="w3-xlarge">재료 소진</b>
 						</button>
@@ -606,14 +606,14 @@
 				<div class="w3-row-padding w3-section">
 					<div class="w3-half">
 						<button
-							class="w3-button w3-col w3-half w3-white w3-section CancelWhyBtn"
+							class="w3-button w3-white w3-section CancelWhyBtn"
 							onClick="CancelWhy(this)" value="배달불가지역">
 							<b class="w3-xlarge">배달불가지역</b>
 						</button>
 					</div>
 					<div class="w3-half">
 						<button
-							class="w3-button w3-col w3-half w3-white w3-section CancelWhyBtn"
+							class="w3-button w3-white w3-section CancelWhyBtn"
 							onClick="CancelWhy(this)" value="고객요청">
 							<b class="w3-xlarge">고객요청</b>
 						</button>
