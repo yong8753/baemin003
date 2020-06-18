@@ -163,16 +163,8 @@
 
 	$("#shopOpen").click(function() {
 		console.log("shopopen이 눌러졌다");
-		var shopNo = $
-		{
-			shopdto.no
-		}
-		;
-		var shopstatus = $
-		{
-			shopdto.shopStatus
-		}
-		;
+		var shopNo = ${shopdto.no};
+		var shopstatus = ${shopdto.shopStatus};
 		$.ajax({
 			type : "post",
 			url : "${ctxpath}/shop/ShopOpenPro.do",
@@ -200,16 +192,8 @@
 	});
 	$("#magam").click(function() {
 		console.log("shopmagam이 눌러졌다");
-		var shopNo = $
-		{
-			shopdto.no
-		}
-		;
-		var shopstatus = $
-		{
-			shopdto.shopStatus
-		}
-		;
+		var shopNo = ${shopdto.no};
+		var shopstatus = ${shopdto.shopStatus};
 		$.ajax({
 			type : "post",
 			url : "${ctxpath}/shop/ShopOpenPro.do",
@@ -218,7 +202,7 @@
 				shopNo : shopNo,
 				shopstatus : shopstatus
 			},
-			async : false,
+			//async : false,
 			//리턴 되어 돌려 받는 데이터의 타입
 			dataType : "text",
 			//기본값이므로 삭제 가능
