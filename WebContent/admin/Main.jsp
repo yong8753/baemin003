@@ -35,15 +35,15 @@
  
 %>
  <div class="w3-row sw-container-900" style="margin-top: 10%; height: 20px;">
-			<a href="${ctxpath }/admin/NoticeList.do" class="w3-button w3-col s4 w3-center" style="padding: 0px;">
+			<a href="${ctxpath }/admin/NoticeList.do" class="w3-button w3-third w3-center" style="padding: 0px;">
 				<i class="material-icons" style="font-size:200px;color:#45c1bf;">notifications</i><br>
 				<h3>공지사항</h3>
 			</a>
-			<a href="${ctxpath }/admin/ShopList.do" class="w3-button w3-col s4 w3-center" style="padding: 0px;">
+			<a href="${ctxpath }/admin/ShopList.do" class="w3-button w3-third w3-center" style="padding: 0px;">
 				<i class="material-icons" style="font-size:200px;color:#45c1bf;">restaurant_menu</i><br>
 				<h3>매장관리</h3>
 			</a>
-			<a href="${ctxpath }/admin/MemberList.do" class="w3-button w3-col s4 w3-center" style="padding: 0px;">
+			<a href="${ctxpath }/admin/MemberList.do" class="w3-button w3-third w3-center" style="padding: 0px;">
 				<i class="material-icons" style="font-size:200px;color:#45c1bf;">account_circle</i><br>
 				<h3>회원관리</h3>
 			</a>
