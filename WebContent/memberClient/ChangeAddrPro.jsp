@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div id="aa">${result }</div>
+<div id="aa" style="display: none;">${result }</div>
 
 <script>
 	window.onload = function() {
