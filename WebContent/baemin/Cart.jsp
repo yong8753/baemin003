@@ -33,6 +33,12 @@
 	position: fixed;
 	bottom: 90px;
 }
+#topnav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
 </style>
 <script>
 	// 스크립트

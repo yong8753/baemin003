@@ -33,10 +33,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
-/* *{
-    margin: 0px;
-	padding: 0px;
-} */
+#topnav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
 </style>
 <script>
 	function pwCheck() {
