@@ -23,6 +23,19 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Insert title here</title>
+
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#topnav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
+</style>
 </head>
 <body>
 	<!-- responsive template by SW ----------------------------------------------------------- -->

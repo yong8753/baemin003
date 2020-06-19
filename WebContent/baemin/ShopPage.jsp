@@ -34,6 +34,12 @@
 	background: #45c1bf;
 	font-weight: 500;
 }
+#topnav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
 </style>
 <script>
 	// 스크립트
