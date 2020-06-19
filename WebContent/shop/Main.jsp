@@ -26,7 +26,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
-/* Style the tab */
+
+
 .tab {
 	float: left;
 	border: 1px solid #ccc;
