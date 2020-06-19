@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../util/ContextPath.jsp" %>
+<%@ include file="../util/ContextPath.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,8 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- CDN - jquery 3.4.1 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- CDN - W3CSS -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- CDN OFFLINE- sw_topNav.css -->
@@ -63,9 +64,12 @@
 		<div class="sw-container-400">
 			<div class="w3-container">
 				<!--  main content start here!!!----------------------------------------------------------- -->
-<div class="w3-center"><h2>개인 회원 가입</h2></div>
+				<div class="w3-center">
+					<h2>개인 회원 가입</h2>
+				</div>
 				<!-- formformformformformformformformform -->
-				<form class="w3-container" name="inputForm" action="${ctxpath}/joinClient/JoinClientPro.do" method="post">
+				<form class="w3-container" name="inputForm"
+					action="${ctxpath}/joinClient/JoinClientPro.do" method="post">
 					<!-- 아이디 .................. -->
 					<div class="w3-row w3-section">
 						<div class="w3-col w3-center w3-right" style="width: 70px;">
@@ -110,12 +114,12 @@
 							</select>
 						</div>
 						<div class="w3-col s4">
-							<input type="text" class="w3-input w3-border" name="tel2" id="tel2"
-								pattern="^\d{3,4}$">
+							<input type="text" class="w3-input w3-border" name="tel2"
+								id="tel2" pattern="^\d{3,4}$">
 						</div>
 						<div class="w3-col s4">
-							<input type="text" class="w3-input w3-border" name="tel3" id="tel3"
-								pattern="^\d{4,4}$">
+							<input type="text" class="w3-input w3-border" name="tel3"
+								id="tel3" pattern="^\d{4,4}$">
 						</div>
 					</div>
 					<!-- 주소 .................. -->
@@ -130,8 +134,8 @@
 						</div>
 					</div>
 					<div class="w3-row w3-center w3-section">
-						<input type="text" name="addr" id="addr" class="w3-input" placeholder="주소"
-							readonly>
+						<input type="text" name="addr" id="addr" class="w3-input"
+							placeholder="주소" readonly>
 					</div>
 					<div class="w3-row w3-center w3-section">
 						<input type="text" name="addr2" id="addr2" class="w3-input"
@@ -139,8 +143,8 @@
 					</div>
 					<!-- 버튼 .................. -->
 					<div class="w3-row w3-center w3-section">
-						<input id="btn" name="btn" class="w3-button w3-baemint" type="submit"
-							value="회원가입" disabled>
+						<input id="btn" name="btn" class="w3-button w3-baemint"
+							type="submit" value="회원가입" disabled>
 						<!-- ................................................................ -->
 						<input class="w3-button w3-baemint" type="button" value="뒤로가기"
 							onClick="back2index()">
@@ -148,8 +152,9 @@
 						<input class="w3-button w3-baemint" type="reset" value="리셋">
 					</div>
 					<!-- 버튼 .................. -->
-					<input type="hidden" name="memberX" id="memberX"> <input type="hidden"
-						name="memberY" id="memberY">
+					<input type="hidden" name="memberX" id="memberX">
+					<!-- -- -->
+					<input type="hidden" name="memberY" id="memberY">
 				</form>
 				<!-- formformformformformformformformform -->
 				<script>
